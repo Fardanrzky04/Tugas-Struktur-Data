@@ -1,0 +1,17 @@
+const arr = [1, 2, 3, 3, 4, 4, 5, 5];
+const frequency = {};
+const result = [];
+
+// Hitung frekuensi kemunculan setiap angka
+for (const num of arr) {
+    frequency[num] = (frequency[num] || 0) + 1;
+}
+
+// Cari angka yang hanya muncul sekali
+for (const num in frequency) {
+    if (frequency[num] === 1) {
+        result.push(Number(num));
+    }
+}
+
+console.log(result);
