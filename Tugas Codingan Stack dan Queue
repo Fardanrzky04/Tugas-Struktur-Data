@@ -1,0 +1,45 @@
+class Stack {
+  constructor() {
+    this.items = [];
+  }
+
+  // Menambahkan elemen ke stack
+  push(element) {
+    this.items.push(element);
+  }
+
+  // Menghapus elemen terakhir dari stack
+  pop() {
+    if (this.isEmpty()) {
+      return "Stack is empty";
+    }
+    return this.items.pop();
+  }
+
+  // Melihat elemen terakhir tanpa menghapusnya
+  peek() {
+    if (this.isEmpty()) {
+      return "Stack is empty";
+    }
+    return this.items[this.items.length - 1];
+  }
+
+  // Mengecek apakah stack kosong
+  isEmpty() {
+    return this.items.length === 0;
+  }
+
+  // Melihat semua elemen dalam stack
+  printStack() {
+    return this.items.toString();
+  }
+}
+
+// Contoh penggunaan
+const stack = new Stack();
+stack.push(10);
+stack.push(20);
+stack.push(30);
+console.log(stack.printStack()); // Output: 10,20,30
+console.log(stack.pop());       // Output: 30
+console.log(stack.peek());      // Output: 20
